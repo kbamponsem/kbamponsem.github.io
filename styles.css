@@ -1,0 +1,350 @@
+/* Kwabena Boateng Amponsem — personal site
+   Minimal typographic layout. No external fonts, no JavaScript. */
+
+:root {
+  --bg: #fdfcfa;
+  --ink: #171614;
+  --ink-soft: #57534d;
+  --ink-faint: #8a847b;
+  --rule: #e3ded6;
+  --accent: #a04a22;
+  --measure: 44rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #12110f;
+    --ink: #f2efe9;
+    --ink-soft: #b3ada3;
+    --ink-faint: #857f75;
+    --rule: #2c2a26;
+    --accent: #e08a5f;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0 auto;
+  padding: 4.5rem 1.5rem 5rem;
+  max-width: var(--measure);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Masthead ---------- */
+
+.masthead {
+  padding-bottom: 2rem;
+  border-bottom: 2px solid var(--ink);
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  margin: 0;
+  font-family: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  font-size: clamp(2rem, 6vw, 2.75rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.role {
+  margin: 0.65rem 0 0;
+  color: var(--accent);
+  font-size: 1.0625rem;
+  font-weight: 500;
+}
+
+.meta {
+  margin: 0.15rem 0 0;
+  color: var(--ink-faint);
+  font-size: 0.9375rem;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.25rem;
+  margin: 1.15rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9375rem;
+}
+
+/* ---------- Sections ---------- */
+
+section {
+  margin-top: 3rem;
+}
+
+h2 {
+  margin: 0 0 1.35rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+section > p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Entries ---------- */
+
+.entries {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.entry {
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  gap: 0 1.75rem;
+  padding: 0 0 1.75rem;
+}
+
+.entry + .entry {
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--rule);
+}
+
+.entry:last-child {
+  padding-bottom: 0;
+}
+
+.when {
+  color: var(--ink-faint);
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.5;
+  padding-top: 0.2rem;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.at {
+  color: var(--ink-faint);
+  font-weight: 400;
+}
+
+.note {
+  color: var(--ink-faint);
+  font-weight: 400;
+}
+
+.place {
+  margin: 0.1rem 0 0;
+  color: var(--ink-soft);
+  font-size: 0.9375rem;
+}
+
+.what ul {
+  margin: 0.7rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.what li {
+  margin-bottom: 0.45rem;
+}
+
+.what li::marker {
+  color: var(--ink-faint);
+}
+
+.what > p:not(.place):not(.stack) {
+  margin: 0.7rem 0 0;
+}
+
+.stack {
+  margin: 0.85rem 0 0;
+  color: var(--ink-faint);
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
+}
+
+/* ---------- Publication ---------- */
+
+.citation {
+  margin-bottom: 0.75rem;
+}
+
+.cite-title {
+  font-family: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  font-size: 1.125rem;
+  font-style: italic;
+}
+
+/* ---------- Skills ---------- */
+
+.skills {
+  margin: 0;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.skills > div {
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  gap: 0 1.75rem;
+}
+
+.skills dt {
+  color: var(--ink-faint);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.skills dd {
+  margin: 0;
+}
+
+/* ---------- Links ---------- */
+
+a {
+  color: inherit;
+  text-decoration-line: underline;
+  text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  text-decoration-color: var(--accent);
+  color: var(--accent);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.links a,
+footer a {
+  text-decoration-color: transparent;
+}
+
+.links a:hover,
+footer a:hover {
+  text-decoration-color: var(--accent);
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-soft);
+  font-size: 0.9375rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+.sep {
+  color: var(--ink-faint);
+  margin: 0 0.15rem;
+}
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 40rem) {
+  body {
+    padding: 2.75rem 1.25rem 3.5rem;
+    font-size: 1rem;
+  }
+
+  .entry,
+  .skills > div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.3rem;
+  }
+
+  .when {
+    padding-top: 0;
+    font-size: 0.8125rem;
+    letter-spacing: 0.02em;
+  }
+
+  .entry {
+    padding-bottom: 1.5rem;
+  }
+
+  .entry + .entry {
+    padding-top: 1.5rem;
+  }
+}
+
+/* ---------- Print: behaves like a CV ---------- */
+
+@media print {
+  :root {
+    --bg: #fff;
+    --ink: #000;
+    --ink-soft: #333;
+    --ink-faint: #555;
+    --rule: #ccc;
+    --accent: #000;
+  }
+
+  body {
+    max-width: none;
+    padding: 0;
+    font-size: 10.5pt;
+    line-height: 1.4;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  section {
+    margin-top: 1.4rem;
+  }
+
+  .entry {
+    padding-bottom: 0.9rem;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .entry + .entry {
+    padding-top: 0.9rem;
+  }
+
+  footer {
+    margin-top: 1.6rem;
+  }
+
+  @page {
+    margin: 16mm 15mm;
+  }
+}
