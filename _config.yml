@@ -1,0 +1,30 @@
+title: Kwabena Amponsem
+tagline: Technical lead, secure & distributed systems
+description: >-
+  Kwabena Amponsem is a technical lead in Rennes, France, building secure
+  distributed systems in Rust and Python. Confidential computing, local-first
+  software, infrastructure for fintech.
+url: https://kbamponsem.github.io
+baseurl: ""
+lang: en
+timezone: Europe/Paris
+
+markdown: kramdown
+permalink: /writing/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+feed:
+  path: feed.xml
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - README.md

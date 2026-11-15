@@ -1,0 +1,23 @@
+---
+layout: default
+title: Writing
+description: Notes on secure systems, local-first software, and shipping things that hold up.
+permalink: /writing/
+---
+<h1>Writing</h1>
+<p class="page-lede">Notes on secure systems, local-first software, and shipping things that hold up.</p>
+
+{%- if site.posts.size > 0 %}
+<ul class="post-list">
+  {%- for post in site.posts %}
+  <li>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %b %Y" }}</time>
+  </li>
+  {%- endfor %}
+</ul>
+{%- else %}
+<p class="empty">Nothing published yet. The first post is in <code>_drafts/</code> — see the README.</p>
+{%- endif %}
+
+<p class="more"><a href="{{ '/feed.xml' | relative_url }}">RSS</a></p>
