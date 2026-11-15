@@ -437,7 +437,7 @@ p a,
 .stack a {
   text-decoration: underline;
   text-decoration-thickness: 1px;
-  text-decoration-color: color-mix(in srgb, currentColor 32%, transparent);
+  text-decoration-color: color-mix(in srgb, currentColor 42%, transparent);
   text-underline-offset: 0.18em;
   transition: text-decoration-color 0.15s ease;
 }
